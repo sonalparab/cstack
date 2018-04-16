@@ -150,7 +150,7 @@ void parse_file ( char * filename,
     }//end of torus
 
     else if( strncmp(line, "push", strlen(line)) == 0){
-       push(st);
+      push(st);
     }
 
     else if(strncmp(line, "pop", strlen(line)) == 0){
@@ -255,39 +255,14 @@ void parse_file ( char * filename,
       st->data[st->top] = tmp;
     }//end rotate
 
-    /*    else if ( strncmp(line, "clear", strlen(line)) == 0 ) {
-      //printf("clear\t%s", line);
-      edges->lastcol = 0;
-      polygons->lastcol = 0;
-    }//end clear
-
-    else if ( strncmp(line, "ident", strlen(line)) == 0 ) {
-      //printf("IDENT\t%s", line);
-      ident(transform);
-    }//end ident
-
-    else if ( strncmp(line, "apply", strlen(line)) == 0 ) {
-      //printf("APPLY\t%s", line);
-      matrix_mult(transform, edges);
-      matrix_mult(transform, polygons);
-    }//end apply
-    */
-
     else if ( strncmp(line, "display", strlen(line)) == 0 ) {
       //printf("DISPLAY\t%s", line);
-      //clear_screen(s);
-      //draw_lines(edges, s, c);
-      //draw_polygons(polygons, s, c);
       display( s );
     }//end display
 
     else if ( strncmp(line, "save", strlen(line)) == 0 ) {
       fgets(line, sizeof(line), f);
       *strchr(line, '\n') = 0;
-      //printf("SAVE\t%s\n", line);
-      //clear_screen(s);
-      //draw_lines(edges, s, c);
-      //draw_polygons(polygons, s, c);
       save_extension(s, line);
     }//end save
   }
